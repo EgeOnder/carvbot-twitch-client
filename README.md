@@ -1,4 +1,4 @@
-# Carvbot Frontend
+# Carvbot Client
 
 Carvbot is a Twitch bot that moderates your channel's chat.
 
@@ -35,7 +35,7 @@ Carvbot is a Twitch bot that moderates your channel's chat.
 ## Installation
 
 -   First, follow the instructions on [backend page](https://github.com/EgeOnder/carvbot-twitch-backend.git).
--   Clone the repository with `git clone https://github.com/EgeOnder/carvbot-twitch-frontend.git`
+-   Clone the repository with `git clone https://github.com/EgeOnder/carvbot-twitch-client.git`
 -   Then download all node dependencies with `npm install`
 -   Create a file named `.env` inside the repository folder.
 -   Enter your environment variables. (**PUBLIC_URL=(url)**)
