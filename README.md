@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Carvbot Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Carvbot is a Twitch bot that moderates your channel's chat.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+-   Add commands and manage them.
+-   Edit your prefix.
+-   See detailed follower data. **_TODO_**
+-   See general live information of your channel.
+-   Easy and free giveaways. **_TODO_**
+-   With Spotify integration, announce currently listening song. **_TODO_**
+-   See and edit your profile information on Twitch. **_TODO_**
 
-### `npm start`
+## Dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-   **react-router-dom** (Using React Router to navigate pages)
+-   **react-device-detect** (Used for responsiveness)
+-   **@material-ui/core** (Used for designing the website)
+-   **@material-ui/icons** (Used for icons)
+-   **axios** (GET, POST and DELETE request handling)
+-   **recharts** (Creating charts and visualization)
+-   **react-hook-form** (For handling forms and validation)
+-   **react-masonry-css** (For dashboard card design)
+-   **react** _and other dev dependencies_
+-   **eslint** (For controlling code writing styles)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Scripts
 
-### `npm test`
+`npm start` (Default React start script)
+`npm run build` (Default React build script)
+`npm run test` (Default React test script)
+`npm run eject` (Default React eject script)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   First, follow the instructions on [backend page](https://github.com/EgeOnder/carvbot-twitch-backend.git).
+-   Clone the repository with `git clone https://github.com/EgeOnder/carvbot-twitch-frontend.git`
+-   Then download all node dependencies with `npm install`
+-   Create a file named `.env` inside the repository folder.
+-   Enter your environment variables. (**PUBLIC_URL=(url)**)
+-   When ready, start the frontend with `npm start`

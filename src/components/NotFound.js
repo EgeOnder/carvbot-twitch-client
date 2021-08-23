@@ -1,0 +1,41 @@
+import React from 'react';
+import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
+
+import Navbar from '../partials/Navbar';
+
+const NotFound = () => {
+	const history = useHistory();
+
+	const handleHomeButton = () => {
+		history.push('/');
+	};
+
+	return (
+		<>
+			<Navbar />
+			<div className="container">
+				<div className="home-page-header">
+					<div className="home-page-p">
+						<p className="header-p">Looks like you got lost.</p>
+						<Button
+							variant="contained"
+							color="primary"
+							style={{ marginTop: '32px' }}
+							onClick={handleHomeButton}
+						>
+							Go back to Home
+						</Button>
+					</div>
+					<img
+						src={process.env.PUBLIC_URL + '/img/not_found.svg'}
+						alt="HomePage"
+						className="home-page-svg"
+					/>
+				</div>
+			</div>
+		</>
+	);
+};
+
+export default NotFound;
