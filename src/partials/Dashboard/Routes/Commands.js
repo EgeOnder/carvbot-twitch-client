@@ -76,7 +76,7 @@ const Commands = () => {
 		let mounted = true;
 
 		axios
-			.get('http://localhost:8000/session/', {
+			.get('https://carvbot-twitch-server.herokuapp.com/session/', {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -84,7 +84,7 @@ const Commands = () => {
 					setUser(res.data);
 					axios
 						.get(
-							`http://localhost:8000/api/commands/${res.data.twitchId}`
+							`https://carvbot-twitch-server.herokuapp.com/api/commands/${res.data.twitchId}`
 						)
 						.then((response) => {
 							if (response.data.message) {
@@ -172,7 +172,7 @@ const Commands = () => {
 						onSubmit={handleSubmit((data) =>
 							axios
 								.post(
-									`http://localhost:8000/api/commands/${user.access_token}`,
+									`https://carvbot-twitch-server.herokuapp.com/api/commands/${user.access_token}`,
 									data
 								)
 								.then((response) => {
@@ -375,7 +375,7 @@ const Commands = () => {
 							onSubmit={handleSubmit((data) =>
 								axios
 									.post(
-										`http://localhost:8000/api/commands/prefix/${user.access_token}`,
+										`https://carvbot-twitch-server.herokuapp.com/api/commands/prefix/${user.access_token}`,
 										data
 									)
 									.then((response) => {

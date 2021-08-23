@@ -24,7 +24,7 @@ const App = () => {
 		let mounted = true;
 
 		axios
-			.get('http://localhost:8000/session/', {
+			.get('https://carvbot-twitch-server.herokuapp.com/session/', {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -62,14 +62,14 @@ const App = () => {
 					<Route path="/login/twitch" exact>
 						{() => {
 							window.location.href =
-								'http://localhost:8000/auth/twitch';
+								'https://carvbot-twitch-server.herokuapp.com/auth/twitch';
 						}}
 					</Route>
 					<Route path="/logout/twitch" exact>
 						{auth ? (
 							() => {
 								window.location.href =
-									'http://localhost:8000/auth/twitch/logout';
+									'https://carvbot-twitch-server.herokuapp.com/auth/twitch/logout';
 							}
 						) : (
 							<Redirect to="/login/twitch" />

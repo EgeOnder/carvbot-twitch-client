@@ -158,7 +158,9 @@ const EnhancedTableToolbar = (props) => {
 
 	const handleDelete = () => {
 		axios
-			.delete(`http://localhost:8000/api/commands/${token}/${selected}`)
+			.delete(
+				`https://carvbot-twitch-server.herokuapp.com/api/commands/${token}/${selected}`
+			)
 			.then((response) => {
 				if (
 					response.data.message &&

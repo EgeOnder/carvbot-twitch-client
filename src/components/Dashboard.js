@@ -26,7 +26,7 @@ const Dashboard = () => {
 		let mounted = true;
 
 		axios
-			.get('http://localhost:8000/session/', {
+			.get('https://carvbot-twitch-server.herokuapp.com/session/', {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -34,7 +34,7 @@ const Dashboard = () => {
 					setUser(res.data);
 					axios
 						.get(
-							`http://localhost:8000/api/mod/${res.data.twitchId}`
+							`https://carvbot-twitch-server.herokuapp.com/api/mod/${res.data.twitchId}`
 						)
 						.then((response) => {
 							setModerators(false);
@@ -48,7 +48,7 @@ const Dashboard = () => {
 						});
 					axios
 						.get(
-							`http://localhost:8000/api/commands/${res.data.twitchId}`
+							`https://carvbot-twitch-server.herokuapp.com/api/commands/${res.data.twitchId}`
 						)
 						.then((response) => {
 							if (
@@ -63,7 +63,7 @@ const Dashboard = () => {
 						});
 					axios
 						.get(
-							`http://localhost:8000/api/streaminfo/${res.data.login}/${res.data.login}`,
+							`https://carvbot-twitch-server.herokuapp.com/api/streaminfo/${res.data.login}/${res.data.login}`,
 							{
 								headers: {
 									Authorization: `Bearer ${res.data.access_token}`,
@@ -79,7 +79,7 @@ const Dashboard = () => {
 						});
 					axios
 						.get(
-							`http://localhost:8000/api/channel/${res.data.twitchId}`,
+							`https://carvbot-twitch-server.herokuapp.com/api/channel/${res.data.twitchId}`,
 							{
 								headers: {
 									Authorization: `Bearer ${res.data.access_token}`,
