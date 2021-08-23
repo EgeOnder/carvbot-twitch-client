@@ -77,7 +77,7 @@ const Navbar = (props) => {
 		let mounted = true;
 
 		axios
-			.get('https://carvbot-twitch-server.herokuapp.com/session/', {
+			.get(`${process.env.API_DOMAIN}/session/`, {
 				withCredentials: true,
 			})
 			.then((res) => {

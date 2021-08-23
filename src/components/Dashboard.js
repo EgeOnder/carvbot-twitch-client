@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import axios from 'axios';
 import Masonry from 'react-masonry-css';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 import PermDrawer from '../partials/Dashboard/PermDrawer';
 import SwipeDrawer from '../partials/Dashboard/SwipeDrawer';
@@ -26,7 +29,7 @@ const Dashboard = () => {
 		let mounted = true;
 
 		axios
-			.get('https://carvbot-twitch-server.herokuapp.com/session/', {
+			.get(`${process.env.API_DOMAIN}/session/`, {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -34,7 +37,7 @@ const Dashboard = () => {
 					setUser(res.data);
 					axios
 						.get(
-							`https://carvbot-twitch-server.herokuapp.com/api/mod/${res.data.twitchId}`
+							`${process.env.API_DOMAIN}/api/mod/${res.data.twitchId}`
 						)
 						.then((response) => {
 							setModerators(false);
@@ -48,7 +51,7 @@ const Dashboard = () => {
 						});
 					axios
 						.get(
-							`https://carvbot-twitch-server.herokuapp.com/api/commands/${res.data.twitchId}`
+							`${process.env.API_DOMAIN}/api/commands/${res.data.twitchId}`
 						)
 						.then((response) => {
 							if (
@@ -63,7 +66,7 @@ const Dashboard = () => {
 						});
 					axios
 						.get(
-							`https://carvbot-twitch-server.herokuapp.com/api/streaminfo/${res.data.login}/${res.data.login}`,
+							`${process.env.API_DOMAIN}/api/streaminfo/${res.data.login}/${res.data.login}`,
 							{
 								headers: {
 									Authorization: `Bearer ${res.data.access_token}`,
@@ -79,7 +82,7 @@ const Dashboard = () => {
 						});
 					axios
 						.get(
-							`https://carvbot-twitch-server.herokuapp.com/api/channel/${res.data.twitchId}`,
+							`${process.env.API_DOMAIN}/api/channel/${res.data.twitchId}`,
 							{
 								headers: {
 									Authorization: `Bearer ${res.data.access_token}`,
