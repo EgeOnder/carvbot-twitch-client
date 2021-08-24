@@ -27,14 +27,14 @@ Carvbot is a Twitch bot that moderates your channel's chat.
 
 ## Scripts
 
-`npm start` (Default React start script)
-`npm run build` (Default React build script)
-`npm run test` (Default React test script)
-`npm run eject` (Default React eject script)
+- `npm start` (Default React start script)
+- `npm run build` (Default React build script)
+- `npm run test` (Default React test script)
+- `npm run eject` (Default React eject script)
 
 ## Installation
 
--   First, follow the instructions on [backend page](https://github.com/EgeOnder/carvbot-twitch-backend.git).
+-   First, follow the instructions on [backend page](https://github.com/EgeOnder/carvbot-twitch-server.git).
 -   Clone the repository with `git clone https://github.com/EgeOnder/carvbot-twitch-client.git`
 -   Then download all node dependencies with `npm install`
 -   Create a file named `.env` inside the repository folder.
