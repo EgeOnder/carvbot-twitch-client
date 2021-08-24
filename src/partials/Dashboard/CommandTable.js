@@ -20,9 +20,6 @@ import Tooltip from '@material-ui/core/Tooltip';
 import DeleteIcon from '@material-ui/icons/Delete';
 import axios from 'axios';
 
-import dotenv from 'dotenv';
-dotenv.config();
-
 function descendingComparator(a, b, orderBy) {
 	if (b[orderBy] < a[orderBy]) {
 		return -1;
@@ -162,7 +159,7 @@ const EnhancedTableToolbar = (props) => {
 	const handleDelete = () => {
 		axios
 			.delete(
-				`${process.env.API_DOMAIN}/api/commands/${token}/${selected}`
+				`${process.env.REACT_APP_API_DOMAIN}/api/commands/${token}/${selected}`
 			)
 			.then((response) => {
 				if (

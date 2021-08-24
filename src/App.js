@@ -6,8 +6,6 @@ import {
 	Route,
 	Redirect,
 } from 'react-router-dom';
-import dotenv from 'dotenv';
-dotenv.config();
 
 import Dashboard from './components/Dashboard';
 import Home from './components/Home';
@@ -26,7 +24,7 @@ const App = () => {
 		let mounted = true;
 
 		axios
-			.get(`${process.env.API_DOMAIN}/session/`, {
+			.get(`${process.env.REACT_APP_API_DOMAIN}/session/`, {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -63,13 +61,13 @@ const App = () => {
 
 					<Route path="/login/twitch" exact>
 						{() => {
-							window.location.href = `${process.env.API_DOMAIN}/auth/twitch`;
+							window.location.href = `${process.env.REACT_APP_API_DOMAIN}/auth/twitch`;
 						}}
 					</Route>
 					<Route path="/logout/twitch" exact>
 						{auth ? (
 							() => {
-								window.location.href = `${process.env.API_DOMAIN}/auth/twitch/logout`;
+								window.location.href = `${process.env.REACT_APP_API_DOMAIN}/auth/twitch/logout`;
 							}
 						) : (
 							<Redirect to="/login/twitch" />

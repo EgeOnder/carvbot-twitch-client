@@ -28,7 +28,10 @@ const NotFound = () => {
 						</Button>
 					</div>
 					<img
-						src={process.env.PUBLIC_URL + '/img/not_found.svg'}
+						src={
+							process.env.REACT_APP_PUBLIC_URL +
+							'/img/not_found.svg'
+						}
 						alt="HomePage"
 						className="home-page-svg"
 					/>

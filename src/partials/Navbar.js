@@ -77,7 +77,7 @@ const Navbar = (props) => {
 		let mounted = true;
 
 		axios
-			.get(`${process.env.API_DOMAIN}/session/`, {
+			.get(`${process.env.REACT_APP_API_DOMAIN}/session/`, {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -106,7 +106,8 @@ const Navbar = (props) => {
 							<div className="mobile-only">
 								<Avatar
 									src={
-										process.env.PUBLIC_URL + '/img/logo.png'
+										process.env.REACT_APP_PUBLIC_URL +
+										'/img/logo.png'
 									}
 									alt="Logo"
 									style={{ marginRight: '12px' }}
@@ -163,7 +164,10 @@ const Navbar = (props) => {
 					<AppBar color="default">
 						<Toolbar>
 							<Avatar
-								src={process.env.PUBLIC_URL + '/img/logo.png'}
+								src={
+									process.env.REACT_APP_PUBLIC_URL +
+									'/img/logo.png'
+								}
 								style={{ marginRight: '12px' }}
 							/>
 							<Typography

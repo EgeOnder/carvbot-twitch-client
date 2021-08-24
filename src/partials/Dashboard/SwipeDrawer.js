@@ -98,7 +98,10 @@ const SwipeDrawer = (props) => {
 				<div>
 					<Box display="flex" p={2}>
 						<Avatar
-							src={process.env.PUBLIC_URL + '/img/logo.png'}
+							src={
+								process.env.REACT_APP_PUBLIC_URL +
+								'/img/logo.png'
+							}
 							alt="Logo"
 							style={{ marginRight: '12px' }}
 						/>

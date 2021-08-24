@@ -30,7 +30,7 @@ const Failure = () => {
 						</Button>
 					</div>
 					<img
-						src={process.env.PUBLIC_URL + '/img/fail.svg'}
+						src={process.env.REACT_APP_PUBLIC_URL + '/img/fail.svg'}
 						alt="HomePage"
 						className="home-page-svg"
 					/>

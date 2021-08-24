@@ -94,7 +94,7 @@ const PermDrawer = () => {
 			>
 				<div style={{ display: 'flex' }}>
 					<Avatar
-						src={process.env.PUBLIC_URL + '/img/logo.png'}
+						src={process.env.REACT_APP_PUBLIC_URL + '/img/logo.png'}
 						style={{ marginTop: '12px', marginLeft: '12px' }}
 					/>
 					<Typography variant="h5" className={classes.title}>

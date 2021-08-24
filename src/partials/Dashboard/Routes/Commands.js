@@ -4,9 +4,6 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 
-import dotenv from 'dotenv';
-dotenv.config();
-
 import {
 	Button,
 	DialogTitle,
@@ -79,7 +76,7 @@ const Commands = () => {
 		let mounted = true;
 
 		axios
-			.get(`${process.env.API_DOMAIN}/session/`, {
+			.get(`${process.env.REACT_APP_API_DOMAIN}/session/`, {
 				withCredentials: true,
 			})
 			.then((res) => {
@@ -87,7 +84,7 @@ const Commands = () => {
 					setUser(res.data);
 					axios
 						.get(
-							`${process.env.API_DOMAIN}/api/commands/${res.data.twitchId}`
+							`${process.env.REACT_APP_API_DOMAIN}/api/commands/${res.data.twitchId}`
 						)
 						.then((response) => {
 							if (response.data.message) {
@@ -175,7 +172,7 @@ const Commands = () => {
 						onSubmit={handleSubmit((data) =>
 							axios
 								.post(
-									`${process.env.API_DOMAIN}/api/commands/${user.access_token}`,
+									`${process.env.REACT_APP_API_DOMAIN}/api/commands/${user.access_token}`,
 									data
 								)
 								.then((response) => {
@@ -378,7 +375,7 @@ const Commands = () => {
 							onSubmit={handleSubmit((data) =>
 								axios
 									.post(
-										`${process.env.API_DOMAIN}/api/commands/prefix/${user.access_token}`,
+										`${process.env.REACT_APP_API_DOMAIN}/api/commands/prefix/${user.access_token}`,
 										data
 									)
 									.then((response) => {
