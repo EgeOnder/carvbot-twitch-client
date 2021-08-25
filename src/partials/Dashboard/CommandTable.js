@@ -162,12 +162,11 @@ const EnhancedTableToolbar = (props) => {
 				`${process.env.REACT_APP_API_DOMAIN}/api/commands/${token}/${selected}`
 			)
 			.then((response) => {
-				if (
-					response.data.message &&
-					response.data.message == 'Deletion successful!'
-				) {
-					window.location.reload();
-				}
+				if (response.data.message) {
+					window.location.href = `/dashboard/commands?status=success&message=${response.data.message}`;
+				} else if (response.data.error) {
+					window.location.href = `/dashboard/commands?status=error&message=${response.data.error}`;
+				} else window.location.reload();
 			})
 			.catch((error) => console.error(error));
 	};

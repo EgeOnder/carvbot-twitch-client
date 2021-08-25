@@ -16,6 +16,7 @@ import Commands from './partials/Dashboard/Routes/Commands';
 import Pricing from './components/Pricing';
 import AdminLogin from './components/AdminLogin';
 import Followers from './partials/Dashboard/Routes/Followers';
+import Profile from './partials/Dashboard/Routes/Profile';
 
 const App = () => {
 	const [auth, setAuth] = useState(null);
@@ -55,6 +56,9 @@ const App = () => {
 					</Route>
 					<Route path="/dashboard/followers" exact>
 						{auth ? <Followers /> : <NotFound />}
+					</Route>
+					<Route path="/dashboard/profile" exact>
+						{auth ? <Profile /> : <NotFound />}
 					</Route>
 
 					<Route path="/pricing" exact component={Pricing} />

@@ -24,25 +24,6 @@ import Loading from '../../Loading';
 import ReactHookFormSelect from '../SelectModal';
 import AlertComponent from '../../AlertComponent';
 
-const special = [
-	{
-		value: 'none',
-		label: 'Select a special event',
-	},
-	{
-		value: 'uptime',
-		label: 'Return Uptime',
-	},
-	{
-		value: 'followage',
-		label: 'Return Follow Age',
-	},
-	{
-		value: 'spotify',
-		label: 'Spotify Current Song (Requires Spotify integration)',
-	},
-];
-
 function useQuery() {
 	return new URLSearchParams(useLocation().search);
 }
@@ -55,6 +36,7 @@ const Commands = () => {
 	const [specialEvent, setSpecialEvent] = useState('none');
 	const [user, setUser] = useState(null);
 	const [prefixOpen, setPrefixOpen] = useState(false);
+	const [special, setSpecial] = useState([]);
 
 	const { handleSubmit, control } = useForm();
 	const query = useQuery();
@@ -98,6 +80,27 @@ const Commands = () => {
 						.catch((error) => console.error(error));
 				}
 			});
+
+		axios
+			.get(`${process.env.REACT_APP_API_DOMAIN}/api/commands/special`)
+			.then((response) => {
+				let specialCommands = [];
+
+				specialCommands.push({
+					value: 'none',
+					label: 'Select a special event',
+				});
+
+				response.data.forEach((cmd) => {
+					specialCommands.push({
+						value: cmd.name,
+						label: cmd.display_name,
+					});
+				});
+
+				setSpecial(specialCommands);
+			})
+			.catch((error) => console.error(error));
 
 		return () => (mounted = false);
 	}, []);

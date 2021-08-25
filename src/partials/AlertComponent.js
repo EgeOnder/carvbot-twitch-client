@@ -1,5 +1,5 @@
-import React from 'react';
-import { makeStyles, Collapse } from '@material-ui/core';
+import React, { useState } from 'react';
+import { makeStyles, Snackbar } from '@material-ui/core';
 import Alert from '@material-ui/lab/Alert';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 
 const AlertComponent = (props) => {
 	const classes = useStyles();
+	const [open, setOpen] = useState(true);
 
 	// eslint-disable-next-line react/prop-types
 	const { severity, message } = props;
@@ -21,11 +22,27 @@ const AlertComponent = (props) => {
 	if (severity != null && message != null) {
 		return (
 			<div className={classes.root}>
-				<Collapse in={true}>
-					<Alert variant="filled" severity={severity}>
+				<Snackbar
+					anchorOrigin={{
+						vertical: 'top',
+						horizontal: 'center',
+					}}
+					open={open}
+					autoHideDuration={6000}
+					onClose={() => {
+						setOpen(false);
+					}}
+				>
+					<Alert
+						variant="filled"
+						onClose={() => {
+							setOpen(false);
+						}}
+						severity={severity}
+					>
 						{message}
 					</Alert>
-				</Collapse>
+				</Snackbar>
 			</div>
 		);
 	} else return null;

@@ -73,7 +73,7 @@ const listItems = [
 	{
 		text: 'Profile',
 		icon: <AccountCircleIcon />,
-		path: '/profile',
+		path: '/dashboard/profile',
 	},
 ];
 
